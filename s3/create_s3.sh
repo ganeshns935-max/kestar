@@ -1,3 +1,10 @@
 #!/bin/bash
+set -e
 
-aws s3 mb $1
+BUCKET_NAME=$1
+
+echo "Creating bucket: $BUCKET_NAME"
+
+aws s3 mb s3://$BUCKET_NAME --region us-east-1
+
+echo "Bucket created successfully"
